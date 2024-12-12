@@ -36,6 +36,7 @@ public class DragonControl : MonoBehaviour
         isAttacking = false;
         isDashing = false;
         animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame

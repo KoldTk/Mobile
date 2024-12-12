@@ -7,20 +7,31 @@ public class SpawnScript : MonoBehaviour
 {
     public GameObject FireSpawnright;
     public Transform spawnLocation;
+    public float length; //Duration between action
+    public float interval; //Count the time between two action
+
 
     // Start is called before the first frame update
     void Start()
     {
 
+        interval = length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Keypad1))
+        
+        if(interval >= length && Input.GetKeyDown(KeyCode.Keypad1))
         {
             SpawnFireBall();
+            interval = 0;
         }
+        if (interval <= length)
+        {
+            interval += Time.deltaTime;
+        }
+            
 
     }
 
